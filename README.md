@@ -1,1 +1,1 @@
-# Mini-Project-1
+This is mini project 1. Made in 4th sem.
