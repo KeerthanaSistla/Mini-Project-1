@@ -1,1 +1,14 @@
-The application aims to improve connectivity amongst family members. Living in a world where most families have becone nuclear and where one barely even knows their first cousins, we hope to develope a platform to reachout to family as far as one can imagine. The application aims to merge family trees at common nodes and build a network where one can find family with just a simple search.
+The application aims to improve connectivity amongst family members. 
+Living in a world where most families have becone nuclear and where one barely even knows their first cousins, we hope to develope a platform to reachout to family as far as one can imagine. 
+The application aims to merge family trees at common nodes and build a network where one can find family with just a simple search.
+
+User interface:
+- The first page after registration would be a single node with the user's details
+- The user can create a card for a relative, with their name and any other dteails, and share it with the relative
+- The relative is to simply create an account and accept the card
+- The home screen of both will be updated to keep the main user as the central node
+- As the number of connections for an account increases, a web is created
+- The home page will also provide two search bars. One, to search details of connections and an other, to find other contacts
+- When a specific contact is selected, the page shifts a little and that node's close connections are unlocked
+- The user can also view a connection card by double clicking on it
+- The color of these connection cards can be changed and special descriptions added
