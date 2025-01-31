@@ -1,0 +1,64 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.bubble {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(149, 62, 0, 0.75);
+  border-radius: 50%;
+  animation: moveToCenter 5s ease-in-out forwards;
+}
+
+/* Random bubble positions */
+.bubble:nth-child(1) { top: 10%; left: 20%; }
+.bubble:nth-child(2) { top: 15%; left: 80%; }
+.bubble:nth-child(3) { top: 30%; left: 50%; }
+.bubble:nth-child(4) { top: 60%; left: 10%; }
+.bubble:nth-child(5) { top: 70%; left: 90%; }
+.bubble:nth-child(6) { top: 20%; left: 30%; }
+.bubble:nth-child(7) { top: 80%; left: 70%; }
+.bubble:nth-child(8) { top: 50%; left: 5%; }
+.bubble:nth-child(9) { top: 40%; left: 60%; }
+.bubble:nth-child(10) { top: 90%; left: 40%; }
+.bubble:nth-child(11) { top: 35%; left: 85%; }
+.bubble:nth-child(12) { top: 65%; left: 15%; }
+.bubble:nth-child(13) { top: 25%; left: 75%; }
+.bubble:nth-child(14) { top: 55%; left: 35%; }
+.bubble:nth-child(15) { top: 45%; left: 55%; }
+
+/* Bubble animation */
+@keyframes moveToCenter {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.7);
+  }
+
+  100% {
+    top: 50%;
+    left: 50%;
+    transform: scale(0.3);
+    opacity: 0.25;
+  }
+}
