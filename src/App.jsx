@@ -1,25 +1,38 @@
 import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
 import Preloader from "./Preloader";
-import "./App.css"; // Import styles
+import "./App.css";
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
-  const [fadeIn, setFadeIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [fadeInTitle, setFadeInTitle] = useState(false); // Track title fade-in state
+  const [fadeInHeader, setFadeInHeader] = useState(false); // Track header fade-in state
+
+  const handlePreloadFinish = () => {
+    setIsLoading(false); // Hide preloader
+    setTimeout(() => {
+      setFadeInTitle(true); // Trigger the fade-in effect for the title after a slight delay
+    }); // Delay to ensure preloader has completely faded
+  };
 
   useEffect(() => {
-    if (!loading) {
+    if (fadeInTitle) {
       setTimeout(() => {
-        setFadeIn(true);
-      }, 300); // Small delay before the fade-in starts
+        setFadeInHeader(true); // Fade in the header after the title
+      }, 1000); // Delay to allow the title fade-in to complete
     }
-  }, [loading]);
+  }, [fadeInTitle]);
 
-  return loading ? (
-    <Preloader onFinish={() => setLoading(false)} />
-  ) : (
-    <div className={`app ${fadeIn ? "fade-in" : ""}`}>
-      <h1>Kinnected</h1>
-      {/* Your actual app content goes here */}
+  return (
+    <div className="app">
+      {isLoading ? (
+        <Preloader onFinish={handlePreloadFinish} />
+      ) : (
+        <>
+          <Header fadeIn={fadeInHeader} />
+          <h1 className={`title ${fadeInTitle ? "fade-in" : ""}`}>Kinnected</h1> {/* Title with fade-in */}
+        </>
+      )}
     </div>
   );
 };

@@ -10,6 +10,12 @@
   justify-content: center;
   overflow: hidden;
   z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.preloader.fade-out {
+  opacity: 0;
 }
 
 .bubbles {
@@ -22,43 +28,34 @@
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: rgba(149, 62, 0, 0.75);
+  background-color: rgba(3, 158, 0, 0.75);
   border-radius: 50%;
-  animation: moveToCenter 5s ease-in-out forwards;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: continuousSpiral 4s ease-in-out forwards;
 }
 
-/* Random bubble positions */
-.bubble:nth-child(1) { top: 10%; left: 20%; }
-.bubble:nth-child(2) { top: 15%; left: 80%; }
-.bubble:nth-child(3) { top: 30%; left: 50%; }
-.bubble:nth-child(4) { top: 60%; left: 10%; }
-.bubble:nth-child(5) { top: 70%; left: 90%; }
-.bubble:nth-child(6) { top: 20%; left: 30%; }
-.bubble:nth-child(7) { top: 80%; left: 70%; }
-.bubble:nth-child(8) { top: 50%; left: 5%; }
-.bubble:nth-child(9) { top: 40%; left: 60%; }
-.bubble:nth-child(10) { top: 90%; left: 40%; }
-.bubble:nth-child(11) { top: 35%; left: 85%; }
-.bubble:nth-child(12) { top: 65%; left: 15%; }
-.bubble:nth-child(13) { top: 25%; left: 75%; }
-.bubble:nth-child(14) { top: 55%; left: 35%; }
-.bubble:nth-child(15) { top: 45%; left: 55%; }
+.bubble:nth-child(1) { --angle: 0deg; }
+.bubble:nth-child(2) { --angle: 45deg; }
+.bubble:nth-child(3) { --angle: 90deg; }
+.bubble:nth-child(4) { --angle: 135deg; }
+.bubble:nth-child(5) { --angle: 180deg; }
+.bubble:nth-child(6) { --angle: 225deg; }
+.bubble:nth-child(7) { --angle: 270deg; }
+.bubble:nth-child(8) { --angle: 315deg; }
 
-/* Bubble animation */
-@keyframes moveToCenter {
+@keyframes continuousSpiral {
   0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: scale(0.7);
+    transform: translate(calc(350px * cos(var(--angle))), calc(350px * sin(var(--angle))))
+                rotate(0deg) scale(1);
   }
 
   100% {
-    top: 50%;
-    left: 50%;
-    transform: scale(0.3);
-    opacity: 0.25;
+    background-color: rgba(149, 62, 0, 0.75);
+    transform: translate(calc(150px * cos(var(--angle) + 240deg)),
+                         calc(150px * sin(var(--angle) + 240deg)))
+                rotate(240deg) scale(0.6);
+    opacity: 0.7;
   }
 }
