@@ -1,63 +1,72 @@
-/* Keep the header fixed at the top */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    background-color: rgba(3, 158, 0, 0.25); /* Custom background color */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 1s ease-out;
-    opacity: 1; /* Set to 1 to make sure header is visible by default */
-  }
-  
-  /* Fade-in effect */
-  .header.fade-in {
-    opacity: 1; /* Ensure fade-in is applied to the header */
-  }
-  
-  /* Icon styles */
-  .icon {
-    color: rgb(149, 62, 0); /* Custom icon color */
-    font-size: 1.5em;
-  }
-  
-  .home {
-    font-size: 2em; /* Larger size for the home icon */
-  }
-  
-  /* Menu wrapper and visibility */
-  .menu-wrapper {
-    display: none; /* Hide menu by default */
-  }
-  
-  .menu-wrapper.active {
-    display: block;
-  }
-  
-  /* Menu layout */
-  .menu {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .menu li {
-    color: rgba(149, 62, 0, 0.75); /* Menu text color */
-  }
-  
-  /* Style for active menu when visible */
-  .menu-wrapper.active .menu {
-    display: block;
-  }
-  
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    .menu-wrapper {
-      display: block;
-    }
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.home {
+  color: white;
+}
+
+.menu-wrapper {
+  position: relative;
+}
+
+.menu {
+  list-style: none;
+  position: absolute;
+  top: 100%; /* Position the menu below the icon */
+  right: 0; /* Align menu to the right */
+  background: white;
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+  width: 150px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: none; /* Initially hidden */
+}
+
+.menu.active {
+  display: block; /* Show when active */
+}
+
+.menu li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.menu li:hover {
+  background: #f4f4f4;
+}
+
+.menu-icon {
+  position: absolute;
+  right: 20px; /* Position at the right corner */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+}
+
+/* Style for the Home icon */
+.icon.home {
+  font-size: 2rem; /* You can adjust the size of the icon */
+  cursor: pointer; /* Change the cursor to pointer for interactivity */
+  transition: padding 0.3s ease; /* Smooth transition for padding change */
+  padding: 0 15px 0 15px; /* Increase the padding when hovered */
+}
+
+.icon.home:hover {
+  padding: 0 15px 0 15px; /* Increase the padding when hovered */
+}

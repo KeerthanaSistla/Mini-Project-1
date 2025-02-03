@@ -1,32 +1,37 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ fadeIn }) => {
   const [menuActive, setMenuActive] = useState(false);
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
   };
 
-  // Fade-in effect for the header
   useEffect(() => {
     const header = document.querySelector(".header");
-    setTimeout(() => {
-      header.classList.add("fade-in"); // Adding fade-in class after the component mounts
-    }, 100); // Small delay to allow the page to load
-  }, []);
+    if (fadeIn) {
+      setTimeout(() => {
+        header.classList.add("fade-in");
+      }, 100);
+    }
+  }, [fadeIn]);
 
   return (
-    <header className="header">
-      <FaHome className="icon home" />
-      <div className={`menu-wrapper ${menuActive ? "active" : ""}`}>
-        <FiMenu className="icon menu" onClick={toggleMenu} />
+    <header className={`header ${fadeIn ? "fade-in" : ""}`}>
+      <Link to="/" className="icon home">
+        <FaHome />
+      </Link>
+
+      <div className="menu-wrapper">
+        <FiMenu className="icon menu-icon" onClick={toggleMenu} />
         <ul className={`menu ${menuActive ? "active" : ""}`}>
-          <li>Create New Kin</li>
-          <li>Settings</li>
-          <li>Logout</li>
+          <li><Link to="/new" onClick={() => setMenuActive(false)}>Create New Kin</Link></li>
+          <li><Link to="/settings" onClick={() => setMenuActive(false)}>Settings</Link></li>
+          <li><Link to="/logout" onClick={() => setMenuActive(false)}>Logout</Link></li>
         </ul>
       </div>
     </header>

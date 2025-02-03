@@ -27,3 +27,13 @@
 .header.fade-in {
   opacity: 1;
 }
+
+/* Home page title fade-in effect */
+.title {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.title.fade-in {
+  opacity: 1;
+}

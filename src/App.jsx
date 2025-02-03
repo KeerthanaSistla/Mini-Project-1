@@ -1,27 +1,30 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Preloader from "./Preloader";
+import Home from "./pages/Home";
+import New from "./pages/New";
+import Settings from "./pages/Settings";
 import "./App.css";
 
-const App = () => {
+const AppContent = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [fadeInTitle, setFadeInTitle] = useState(false); // Track title fade-in state
-  const [fadeInHeader, setFadeInHeader] = useState(false); // Track header fade-in state
+  const [fadeInHeader, setFadeInHeader] = useState(false);
 
   const handlePreloadFinish = () => {
-    setIsLoading(false); // Hide preloader
+    setIsLoading(false);
     setTimeout(() => {
-      setFadeInTitle(true); // Trigger the fade-in effect for the title after a slight delay
-    }); // Delay to ensure preloader has completely faded
+      setFadeInHeader(true); // Trigger the fade-in effect for the header after a slight delay
+    }, 1000); // Delay to ensure preloader has completely faded
   };
 
   useEffect(() => {
-    if (fadeInTitle) {
+    if (!isLoading) {
       setTimeout(() => {
-        setFadeInHeader(true); // Fade in the header after the title
-      }, 1000); // Delay to allow the title fade-in to complete
+        setFadeInHeader(true);
+      }, 1000); // Delay to allow the header fade-in to complete
     }
-  }, [fadeInTitle]);
+  }, [isLoading]);
 
   return (
     <div className="app">
@@ -30,10 +33,22 @@ const App = () => {
       ) : (
         <>
           <Header fadeIn={fadeInHeader} />
-          <h1 className={`title ${fadeInTitle ? "fade-in" : ""}`}>Kinnected</h1> {/* Title with fade-in */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/new" element={<New />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
         </>
       )}
     </div>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 };
 
