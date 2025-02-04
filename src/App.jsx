@@ -22,7 +22,7 @@ const AppContent = () => {
     if (!isLoading) {
       setTimeout(() => {
         setFadeInHeader(true);
-      }, 1000); // Delay to allow the header fade-in to complete
+      }, 2500); // Delay to allow the header fade-in to complete
     }
   }, [isLoading]);
 
