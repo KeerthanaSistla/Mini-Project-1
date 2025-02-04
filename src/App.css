@@ -10,7 +10,7 @@
 
 .title {
   font-size: 3.2em;
-  color: rgba(149, 62, 0, 0.75);
+  color: rgb(149, 62, 0);
   opacity: 0; /* Initially invisible */
   transition: opacity 2s ease-out; /* Fade-in effect */
 }
