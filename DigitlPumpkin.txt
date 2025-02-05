@@ -12,3 +12,33 @@ User interface:
 - When a specific contact is selected, the page shifts a little and that node's close connections are unlocked
 - The user can also view a connection card by double clicking on it
 - The color of these connection cards can be changed and special descriptions added
+
+1. Why should I use this application?
+A: To connect with relatives and explore your family trees
+
+2. Who can I connect with?
+A: You can search your relatives and connect with those that are a part of your family trees
+
+3. What details can I see?:
+A: You can see your relatives' Name, UserID, Phone number, Relation to You, Profile Picture, Social Media Details (Email, Facebook, Instagram, etc), Home address and/or any other details that they are willing to share. Most of the details are optional so only those details that they wish to share will be see. 
+
+You can also add your own description for each contact and this would be private to you alone.
+
+4. Can I search for contacts?
+A: It depends on whether you are already connected with them or not.
+
+- If the relative is not in your contact list then, you can search for the relative using their Name, UserID and Contact Number.
+
+Over your connections, you can search for a contact with any of the above details and also with their location, relation, education, description (The one that is only visible to you), occupation and nickname.
+
+The search for some details like Profile picture and Social Media Details is dependent on the settings of that user. If they chose to keep them private (To thier connections only) then they will remain seen only to their connections. If they make it public then these details are also seen when someone, not in their connections, searches for their contact.
+
+5. Is my data safe?
+A: You can connect with an other user only after accepting a connection request. All the details of the contact (Like Name, AccountID and Phone number) before hand and you can verify the contact before accepting the connect request.
+
+Backend:
+- The application will have a database with multiple tables.
+- A new table is createdd each time an account is created. The table is destroyed if the account is deleted.
+- This table will contain the details of each contact that are unique to the user like a nickname, the relation and any further description they wish to add for that contact.
+- One common table is maintained to store all the details of the users. This table will consist of their UserId (Primary Key), Name (Not Null), Contact Number (Not Null), Profile Picture, Social Media Account Details, location, relation and education.
+- Finally, a login table is maintained to manage the UserId-Password pair of the user. 
