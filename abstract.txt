@@ -1,1 +1,143 @@
+Kinnected
 
+Project Team:
+
+Bhavana (Roll Number: 160123737145)
+
+Keerthana (Roll Number: 160123737164)
+
+Abstract
+
+In today's world, families are becoming increasingly nuclear, leading to a weakening of extended family connections. Kinnected is an innovative web-based platform designed to bridge this gap by enabling users to build and explore their family trees. The application allows users to create personal profiles, add relatives by sending connection requests, and build a dynamic, visually represented family network.
+
+The core functionality of Kinnected revolves around merging family trees at common nodes, allowing users to discover and connect with relatives through an intuitive search system. Users can customize connection cards, store private notes about their contacts, and manage privacy settings for shared information. The application ensures secure connections by requiring mutual acceptance of connection requests before any information is shared.
+
+From a technical standpoint, Kinnected utilizes a structured database with multiple tables, maintaining individual and shared user data. The system is designed for scalability and privacy, ensuring that users have control over the visibility of their information. Security measures, including authentication and access control, are implemented to protect user data.
+
+Project Timeline
+
+Major Timelines:
+
+Week 1-2: Project Planning & Initial Setup
+
+Finalizing requirements and feature list
+
+Designing UI/UX wireframes
+
+Setting up the repository and development environment
+
+Week 3-4: Frontend & Backend Development (Phase 1)
+
+Implementing user authentication and authorization
+
+Creating the user profile and family tree UI
+
+Developing database schemas and initial API endpoints
+
+Week 5-6: Frontend & Backend Development (Phase 2)
+
+Enhancing UI with interactive elements
+
+Implementing search and connection request features
+
+Testing API functionalities and fixing bugs
+
+Week 7: Testing & Refinements
+
+Performing unit and integration testing
+
+Addressing UI/UX improvements and security patches
+
+Deploying the beta version for initial feedback
+
+Week 8: Final Deployment & Documentation
+
+Final bug fixes and performance optimizations
+
+Preparing user documentation and deployment guides
+
+Hosting the final version on production servers
+
+Minor Timelines:
+
+Daily Standups & Progress Checks (Ensure timely completion of tasks)
+
+Weekly Code Reviews (Maintain code quality and address feedback)
+
+Midway Progress Evaluation (End of Week 4, to assess development status)
+
+Final Testing & Review (Week 7, to ensure functionality and security)
+
+Non-Technical Platforms and Tools:
+
+User Research & Design: Figma (for UI/UX design and prototyping)
+
+Project Management: Trello, Notion (for task tracking and collaboration)
+
+Communication: Slack, Discord (for team discussions and updates)
+
+Technical Platforms and Tools:
+
+Frontend:
+
+Framework: React.js (for building a dynamic and responsive user interface)
+
+Styling: Tailwind CSS / Material UI (for an aesthetically pleasing design)
+
+State Management: Redux / Context API (for managing application state efficiently)
+
+Routing: React Router (for handling navigation between different pages)
+
+Form Handling & Validation: Formik & Yup (for managing and validating user input)
+
+Animations & Interactivity: Framer Motion (for enhancing UI experience)
+
+API Integration: Axios (for handling API requests and responses efficiently)
+
+Backend:
+
+Server Framework: Node.js with Express.js (for handling API requests and responses)
+
+Authentication & Authorization: JWT & OAuth (for secure user authentication and role-based access control)
+
+Database:
+
+Relational Database: PostgreSQL / MySQL (for structured data storage and optimized querying)
+
+NoSQL Database: MongoDB (if required for flexible data handling and faster access to hierarchical data)
+
+Storage: Firebase / AWS S3 (for profile pictures and media storage)
+
+Real-Time Features: WebSockets / Socket.io (for enabling live updates and interactions)
+
+Caching & Performance Optimization: Redis (for faster access to frequently used data)
+
+Backend Architecture:
+
+MVC (Model-View-Controller) Design Pattern: To structure the backend efficiently
+
+RESTful API Development: To ensure modularity and ease of use for the frontend
+
+Middleware Implementations: To handle authentication, logging, and error handling effectively
+
+Unit & Integration Testing: Jest & Mocha/Chai (for ensuring reliability and robustness of backend services)
+
+Hosting & Deployment:
+
+Frontend Hosting: Vercel / Netlify (for live hosting of the web application)
+
+Backend Hosting: Heroku / AWS EC2 / DigitalOcean (for hosting the backend server)
+
+Database Hosting: Supabase / Firebase / AWS RDS (for managing and scaling the database)
+
+Version Control & CI/CD:
+
+Version Control: Git & GitHub (for collaborative development and version tracking)
+
+CI/CD Pipeline: GitHub Actions / Jenkins (for automated testing and deployment)
+
+Containerization: Docker (for ensuring consistency across different environments)
+
+Conclusion
+
+Kinnected is designed to strengthen family connections by providing an intuitive and secure platform for users to explore and expand their family networks. By leveraging modern web technologies and secure database management, the application ensures privacy, ease of use, and scalability. With the integration of a user-friendly interface and advanced search functionalities, Kinnected serves as a digital solution to reconnect families across generations and distances.
