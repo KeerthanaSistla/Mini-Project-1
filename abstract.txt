@@ -14,60 +14,6 @@ The core functionality of Kinnected revolves around merging family trees at comm
 
 From a technical standpoint, Kinnected utilizes a structured database with multiple tables, maintaining individual and shared user data. The system is designed for scalability and privacy, ensuring that users have control over the visibility of their information. Security measures, including authentication and access control, are implemented to protect user data.
 
-Project Timeline
-
-Major Timelines:
-
-Week 1-2: Project Planning & Initial Setup
-
-Finalizing requirements and feature list
-
-Designing UI/UX wireframes
-
-Setting up the repository and development environment
-
-Week 3-4: Frontend & Backend Development (Phase 1)
-
-Implementing user authentication and authorization
-
-Creating the user profile and family tree UI
-
-Developing database schemas and initial API endpoints
-
-Week 5-6: Frontend & Backend Development (Phase 2)
-
-Enhancing UI with interactive elements
-
-Implementing search and connection request features
-
-Testing API functionalities and fixing bugs
-
-Week 7: Testing & Refinements
-
-Performing unit and integration testing
-
-Addressing UI/UX improvements and security patches
-
-Deploying the beta version for initial feedback
-
-Week 8: Final Deployment & Documentation
-
-Final bug fixes and performance optimizations
-
-Preparing user documentation and deployment guides
-
-Hosting the final version on production servers
-
-Minor Timelines:
-
-Daily Standups & Progress Checks (Ensure timely completion of tasks)
-
-Weekly Code Reviews (Maintain code quality and address feedback)
-
-Midway Progress Evaluation (End of Week 4, to assess development status)
-
-Final Testing & Review (Week 7, to ensure functionality and security)
-
 Non-Technical Platforms and Tools:
 
 User Research & Design: Figma (for UI/UX design and prototyping)
@@ -137,6 +83,84 @@ Version Control: Git & GitHub (for collaborative development and version trackin
 CI/CD Pipeline: GitHub Actions / Jenkins (for automated testing and deployment)
 
 Containerization: Docker (for ensuring consistency across different environments)
+
+Project Timeline (4 Months)
+
+Month 1: Planning & Design
+
+Major Tasks:
+
+Define project scope, requirements, and use cases
+
+Create wireframes and prototypes using Figma
+
+Finalize the tech stack
+
+Set up the development environment
+
+Minor Tasks:
+
+Create GitHub repository for version control
+
+Prepare documentation for initial designs and requirements
+
+Month 2: Frontend Development
+
+Major Tasks:
+
+Develop the registration, login, and user profile pages
+
+Implement dynamic family tree visualization
+
+Add search functionality for contacts
+
+Minor Tasks:
+
+Set up routing with React Router
+
+Handle form validation using Formik & Yup
+
+Add animations using Framer Motion
+
+Month 3: Backend Development
+
+Major Tasks:
+
+Set up Node.js server with Express.js
+
+Develop RESTful APIs for user management, connection requests, and data retrieval
+
+Implement JWT-based authentication and role-based access control
+
+Design and implement the database schema
+
+Minor Tasks:
+
+Configure database with relational and NoSQL options
+
+Optimize database queries for performance
+
+Set up middleware for logging and error handling
+
+Month 4: Integration, Testing, and Deployment
+
+Major Tasks:
+
+Integrate frontend with backend APIs
+
+Conduct unit, integration, and end-to-end testing
+
+Ensure data privacy and secure connections
+
+Deploy the frontend and backend to hosting platforms
+
+Minor Tasks:
+
+Optimize for mobile responsiveness
+
+Conduct user testing and gather feedback
+
+Finalize project documentation and presentation materials
 
 Conclusion
 
