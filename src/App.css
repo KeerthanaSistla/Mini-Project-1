@@ -37,3 +37,20 @@
 .title.fade-in {
   opacity: 1;
 }
+
+/* App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+  background-color: #121212;
+  color: #fff;
+}
+
+.App {
+  padding: 20px;
+}
