@@ -14,7 +14,7 @@ const Preloader = ({ onFinish }) => {
   }, [onFinish]);
 
   return (
-    <div className={`preloader ${fadeOut ? "fade-out" : ""}`}>
+    <div className={`preloader ${fadeOut ? "fade-out" : ""}${theme}`}`}>
       <div className="bubbles">
         {Array.from({ length: 8 }).map((_, i) => (
           <span key={i} className="bubble"></span>
