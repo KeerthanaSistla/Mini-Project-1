@@ -10,6 +10,26 @@ import "./App.css";
 const AppContent = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [fadeInHeader, setFadeInHeader] = useState(false);
+  const [theme, setTheme] = useState("light");
+  
+  // Check if there is a saved theme in localStorage
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+  }, []);
+
+  // Apply the theme globally when it changes
+  useEffect(() => {
+    document.body.classList.toggle("dark-theme", theme === "dark");
+    localStorage.setItem("theme", theme); // Persist theme in localStorage
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
 
   const handlePreloadFinish = () => {
     setIsLoading(false);
@@ -34,9 +54,18 @@ const AppContent = () => {
         <>
           <Header fadeIn={fadeInHeader} />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/new" element={<New />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route
+              path="/"
+              element={<Home toggleTheme={toggleTheme} theme={theme} />}
+            />
+            <Route
+              path="/new"
+              element={<New toggleTheme={toggleTheme} theme={theme} />}
+            />
+            <Route
+              path="/settings"
+              element={<Settings toggleTheme={toggleTheme} theme={theme} />}
+            />
           </Routes>
         </>
       )}

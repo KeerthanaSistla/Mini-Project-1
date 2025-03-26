@@ -12,6 +12,8 @@ User interface:
 - When a specific contact is selected, the page shifts a little and that node's close connections are unlocked
 - The user can also view a connection card by double clicking on it
 - The color of these connection cards can be changed and special descriptions added
+- Users can create a digital family album where they can upload pictures, documents, and stories about family history. This feature can also allow users to share old family memories, heritage to build a richer family tree
+- As the network grows, the family tree can be visualized in a dynamic, interactive format. You can zoom in/out to explore distant branches and see how different family members are connected over time. You could also filter by specific branches (e.g., maternal or paternal side) to explore connections.
 
 1. Why should I use this application?
 A: To connect with relatives and explore your family trees
@@ -36,9 +38,12 @@ The search for some details like Profile picture and Social Media Details is dep
 5. Is my data safe?
 A: You can connect with an other user only after accepting a connection request. All the details of the contact (Like Name, AccountID and Phone number) before hand and you can verify the contact before accepting the connect request.
 
+6. What happens when I delete my account?
+A: When you delte your account you public information can still be seen by your connections and yourprivate information will be deleted to everyone including your connections.
+
 Backend:
 - The application will have a database with multiple tables.
-- A new table is createdd each time an account is created. The table is destroyed if the account is deleted.
+- A new table is createdd each time an account is created. A part of the table is destroyed if the account is deleted.
 - This table will contain the details of each contact that are unique to the user like a nickname, the relation and any further description they wish to add for that contact.
 - One common table is maintained to store all the details of the users. This table will consist of their UserId (Primary Key), Name (Not Null), Contact Number (Not Null), Profile Picture, Social Media Account Details, location, relation and education.
 - Finally, a login table is maintained to manage the UserId-Password pair of the user. 
