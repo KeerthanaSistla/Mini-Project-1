@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaWhatsapp, FaFacebook, FaInstagram, FaLink } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext";
 import "./New.css";
 
 const New = () => {
@@ -9,6 +10,7 @@ const New = () => {
     nickname: ""
   });
   const [showPreview, setShowPreview] = useState(false);
+  const { theme } = useTheme(); // Get the current theme
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -35,11 +37,22 @@ const New = () => {
       alert("Link copied to clipboard!");
     }
   };
+  
+  const labelStyle = {
+    color: theme.secondary,
+    backgroundColor: theme.cardBg
+  };
+
+  const buttonStyle = (color) => ({
+    backgroundColor: color,
+    color: "white"
+  });
+
 
   return (
-    <div className="new-container">
+    <div className="new-container" style={{ backgroundColor: theme.background }}>
       <div className="new-card">
-        <h1 className="new-title">Add New Connection</h1>
+        <h1 className="new-title" style={{ color: theme.primary }}>Add New Connection</h1>
         <div className="new-form">
           <div className="input-container">
             <input 
@@ -49,8 +62,9 @@ const New = () => {
               onChange={handleChange} 
               placeholder=" "
               required 
+              style={inputStyle}
             />
-            <label>Name</label>
+            <label style={labelStyle}>Name</label>
           </div>
           <div className="input-container">
             <input 
@@ -60,8 +74,9 @@ const New = () => {
               onChange={handleChange} 
               placeholder=" "
               required 
+              style={inputStyle}
             />
-            <label>Relation</label>
+            <label style={labelStyle}>Relation</label>
           </div>
           <div className="input-container">
             <input 
@@ -71,20 +86,35 @@ const New = () => {
               onChange={handleChange} 
               placeholder=" "
               required 
+              style={inputStyle}
             />
-            <label>What do you call them?</label>
+            <label style={labelStyle}>What do you call them?</label>
           </div>
         </div>
         <div className="button-container">
-          <button type="button" onClick={handleSaveDraft} className="save-draft">Save Draft</button>
-          <button type="button" onClick={() => setShowPreview(true)} className="share">Share</button>
+          <button 
+            type="button" 
+            onClick={handleSaveDraft} 
+            className="save-draft"
+            style={buttonStyle(theme.secondary)}
+          >
+            Save Draft
+          </button>
+          <button 
+            type="button" 
+            onClick={() => setShowPreview(true)} 
+            className="share"
+            style={buttonStyle(theme.success)}
+          >
+            Share
+          </button>
         </div>
       </div>
       {showPreview && (
         <div className="preview-overlay">
-          <div className="preview-card">
-            <h2 className="preview-title">Preview</h2>
-            <div className="preview-content">
+          <div className="preview-card" style={{ backgroundColor: theme.cardBg }}>
+            <h2 className="preview-title" style={{ color: theme.primary }}>Preview</h2>
+            <div className="preview-content" style={{ backgroundColor: theme.background, color: theme.text }}>
               <p><strong>Name:</strong> {formData.name}</p>
               <p><strong>Relation:</strong> {formData.relation}</p>
               <p><strong>What I call them:</strong> {formData.nickname}</p>
@@ -93,9 +123,15 @@ const New = () => {
               <FaWhatsapp className="icon whatsapp" onClick={() => handleShare("whatsapp")} />
               <FaFacebook className="icon facebook" onClick={() => handleShare("facebook")} />
               <FaInstagram className="icon instagram" onClick={() => handleShare("instagram")} />
-              <FaLink className="icon link" onClick={() => handleShare("link")} />
+              <FaLink className="icon link" onClick={() => handleShare("link")} style={{ color: theme.secondary }} />
             </div>
-            <button className="close-preview" onClick={() => setShowPreview(false)}>Close</button>
+            <button 
+              className="close-preview" 
+              onClick={() => setShowPreview(false)}
+              style={buttonStyle(theme.error)}
+            >
+              Close
+            </button>
           </div>
         </div>
       )}

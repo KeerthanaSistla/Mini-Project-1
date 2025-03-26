@@ -5,6 +5,7 @@
   min-height: 100vh;
   padding: 1rem;
   width: 100%;
+  background-color: var(--background);
 }
 
 .new-card {
@@ -12,10 +13,10 @@
   flex-direction: column;
   align-items: center; /* Ensures everything inside the card is centered */
   justify-content: center;
-  background: white;
+  background: var(--cardBg); /* Changed from white to use theme variable */
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--cardShadow);
   max-width: 400px;
   width: 100%;
 }
@@ -25,9 +26,10 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  color: var(--primary);
 }
 
-.new-form{
+.new-form {
   width: 100%;
 }
 
@@ -43,11 +45,13 @@
 .input-container input {
   width: 90%; /* Adjust width to center properly */
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--secondary); /* Changed from #ccc to use theme variable */
   border-radius: 5px;
   font-size: 1rem;
   outline: none;
   text-align: center; /* Align text inside input box */
+  background: var(--cardBg);
+  color: var(--text);
 }
 
 .input-container label {
@@ -55,10 +59,10 @@
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
-  color: #777;
+  color: var(--secondary); /* Changed from #777 to use theme variable */
   font-size: 0.9rem;
   transition: all 0.3s ease;
-  background: white;
+  background: var(--cardBg);
   padding: 0 5px;
 }
 
@@ -66,7 +70,7 @@
 .input-container input:not(:placeholder-shown) ~ label {
   top: 0;
   font-size: 0.85rem;
-  color: #8B4513;
+  color: var(--accent);
 }
 
 .button-container {
@@ -86,21 +90,23 @@
 }
 
 .save-draft {
-  background: #8B4513;
+  background: var(--secondary);
   color: white;
-}
+} /* Added missing closing brace */
 
 .save-draft:hover {
-  background: #6B3213;
+  background: var(--primary);
+  opacity: 0.9;
 }
 
 .share {
-  background: #228B22;
+  background: var(--success);
   color: white;
 }
 
 .share:hover {
-  background: #1A6B1A;
+  background: var(--accent);
+  opacity: 0.9;
 }
 
 .preview-overlay {
@@ -113,10 +119,10 @@
 }
 
 .preview-card {
-  background: white;
+  background: var(--cardBg);
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--cardShadow);
   max-width: 400px;
   width: 100%;
 }
@@ -126,12 +132,14 @@
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  color: var(--primary);
 }
 
 .preview-content {
-  background: #f8f8f8;
+  background: var(--background);
   padding: 1rem;
   border-radius: 5px;
+  color: var(--text);
 }
 
 .share-icons {
@@ -163,7 +171,7 @@
 }
 
 .link {
-  color: #555;
+  color: var(--secondary);
 }
 
 .close-preview {
@@ -173,12 +181,12 @@
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #d9534f;
+  background: var(--error);
   color: white;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .close-preview:hover {
-  background: #c9302c;
+  opacity: 0.9;
 }
